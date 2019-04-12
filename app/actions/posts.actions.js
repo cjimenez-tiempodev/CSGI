@@ -19,6 +19,5 @@ export const retrievePosts = () => {
             method: 'get',
             url: `${API_URL}/posts`
         });
-    }
+    };
 };
-
