@@ -1,9 +1,11 @@
 <div class="post-list-container">
-  <h1>CSGI Challenge</h1>
-  <button class="btn btn-primary" type="button" ng-click="$ctrl.retrievePosts()">Retrieve Posts</button>
-  <div>
-      <ul>
-          <li ng-repeat="post in $ctrl.state.postsList track by post.id">{{post.title}}</li>
-      </ul>
+  <h1>Show Post List</h1>
+  <div class="list-container">
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.retrievePosts()">Retrieve Posts</button>
+    <div>
+        <ul>
+            <li ng-repeat="post in $ctrl.state.postsList track by post.id">{{post.title}}</li>
+        </ul>
+    </div>
   </div>
 </div>
