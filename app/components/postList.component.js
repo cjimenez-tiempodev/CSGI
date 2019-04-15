@@ -22,11 +22,13 @@ class PostListComponent {
           this.state = state;
           this.actions = actions;
       });
+
   }
 
   mapStateToTarget(state) {
       return {
-          postsList: GetPostsListSelector(state)
+          postsList: GetPostsListSelector(state),
+          isFetching: state.posts.isFetching
       };
   }
 

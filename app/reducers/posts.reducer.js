@@ -9,6 +9,7 @@ export const INITIAL_STATE = Immutable({
     isFetching: false
 });
 
+//A reducer, a pure function with (state, action)
 export default function postReducer(state = INITIAL_STATE, {type, payload = {}}) {
     switch (type) {
         case RETRIEVE_POSTS.BEGIN:
