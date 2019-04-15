@@ -6,21 +6,23 @@ export default function thunkHelper(dispatch, types, config) {
     //Dispatch BEGIN action
     dispatch({type: requestType});
 
-    $http(config).then(response => {
-        //Dispatch SUCCESS action
-        dispatch({
-            type: successType,
-            payload: response.data
-        });
-        deferred.resolve(response);
-    }).catch(error => {
-        //Dispatch ERROR action
-        dispatch({
-            type: errorType,
-            payload: error
-        });
-        deferred.reject(error);
-    });
+    setInterval(function(){
+      $http(config).then(response => {
+          //Dispatch SUCCESS action
+          dispatch({
+              type: successType,
+              payload: response.data
+          });
+          deferred.resolve(response);
+      }).catch(error => {
+          //Dispatch ERROR action
+          dispatch({
+              type: errorType,
+              payload: error
+          });
+          deferred.reject(error);
+      });
+     }, 3000);
 
     deferred.promise;
 }

@@ -1,0 +1,12 @@
+<div class="post-list-container">
+  <h1>Show Post List</h1>
+  <div class="list-container">
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.retrievePosts()">Retrieve Posts</button><br/>
+    <span ng-show="$ctrl.state.isFetching">Loading...</span>
+    <div>
+        <ul>
+            <li ng-repeat="post in $ctrl.state.postsList track by post.id" ng-hide="$ctrl.state.isFetching">{{post.title}}</li>
+        </ul>
+    </div>
+  </div>
+</div>
